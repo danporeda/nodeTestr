@@ -13,12 +13,23 @@ it('should sum an array', () => {
   });
 
   assert.strictEqual(total, 6);
-  numbers.push(3);
-  numbers.push(3);
-  numbers.push(3);
-  numbers.push(3);
 });
 
-it('BeforeEach is ran each time', () => {
-  assert.strictEqual(numbers.length, 4);
+it('should multiply an array', () => {
+  let total = 2;
+  forEach(numbers, (value) => {
+    total *= value;
+  });
+
+  assert.strictEqual(total, 12);
+})
+
+it('BeforeEach is ran each time (by numbers.length', () => {
+  assert.strictEqual(numbers.length, 3);
+});
+
+it('BeforeEach is ran each time (by array item)', () => {
+  assert.strictEqual(numbers[0], 1);
+  assert.strictEqual(numbers[1], 2);
+  assert.strictEqual(numbers[2], 3);
 });
